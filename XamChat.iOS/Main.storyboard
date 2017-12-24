@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="597">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="596">
+            <objects>
+                <navigationController id="597" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="599">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="606" kind="relationship" relationship="rootViewController" id="670"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="600" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="149"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="605">
+            <objects>
+                <viewController id="606" customClass="LoginController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="603"/>
+                        <viewControllerLayoutGuide type="bottom" id="604"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="607">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="871">
+                                <rect key="frame" x="142" y="209" width="91" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="873">
+                                <rect key="frame" x="168.5" y="469" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="872">
+                                <rect key="frame" x="142" y="319" width="91" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1094">
+                                <rect key="frame" x="178" y="587" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="871" firstAttribute="top" secondItem="603" secondAttribute="bottom" constant="145" id="4w7-IM-fia"/>
+                            <constraint firstItem="872" firstAttribute="top" secondItem="871" secondAttribute="bottom" constant="80" id="Ar6-wS-qsl"/>
+                            <constraint firstItem="871" firstAttribute="centerX" secondItem="607" secondAttribute="centerX" id="BRo-RE-YCs"/>
+                            <constraint firstItem="872" firstAttribute="width" secondItem="871" secondAttribute="width" id="JOM-Cj-UEs"/>
+                            <constraint firstItem="1094" firstAttribute="centerX" secondItem="607" secondAttribute="centerX" id="TiA-jt-sJD"/>
+                            <constraint firstItem="604" firstAttribute="top" secondItem="1094" secondAttribute="bottom" constant="60" id="U2g-Gk-2fk"/>
+                            <constraint firstItem="873" firstAttribute="top" secondItem="872" secondAttribute="bottom" constant="120" id="ZSB-bA-7Dg"/>
+                            <constraint firstItem="873" firstAttribute="centerX" secondItem="607" secondAttribute="centerX" id="aev-Bf-bgc"/>
+                            <constraint firstItem="872" firstAttribute="centerX" secondItem="607" secondAttribute="centerX" id="rxw-th-BGl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="669"/>
+                    <connections>
+                        <outlet property="UserNameText" destination="871" id="name-outlet-871"/>
+                        <outlet property="indicateActivity" destination="1094" id="name-outlet-1094"/>
+                        <outlet property="loginButton" destination="873" id="name-outlet-873"/>
+                        <outlet property="passwordText" destination="872" id="name-outlet-872"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="608" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="144"/>
+        </scene>
+    </scenes>
+</document>
