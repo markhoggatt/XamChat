@@ -107,6 +107,11 @@
     <Compile Include="LoginController.designer.cs">
       <DependentUpon>LoginController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConversationsController.cs" />
+    <Compile Include="ConversationsController.designer.cs">
+      <DependentUpon>ConversationsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConversationsTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamChat.Core\XamChat.Core.csproj">

@@ -27,7 +27,7 @@ namespace XamChat.Core.Fakes
 		public async Task<User> Login(string username, string password)
 		{
 			await Sleep();
-			return new User { Id = "1", UserName = username };
+            return new User { Id = "1", UserName = username, Password = password };
 		}
 
 		public async Task<User> Register(User user)
