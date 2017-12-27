@@ -15,7 +15,7 @@ namespace XamChat.Tests
 		{
 			if (ServicesContainer.NumberInContainer() > 0)
 			{
-				Assert.Equal(2, ServicesContainer.NumberInContainer());
+				Assert.Equal(3, ServicesContainer.NumberInContainer());
 				return;
 			}
 
