@@ -25,8 +25,7 @@ namespace XamChat.Core.Services
 
 		public static object Resolve(Type type)
 		{
-			Lazy<Object> service;
-			if (services.TryGetValue(type, out service))
+			if (services.TryGetValue(type, out Lazy<object> service))
 			{
 				return service.Value;
 			}

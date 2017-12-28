@@ -10,9 +10,9 @@ namespace XamChat.Core.ViewModels
 		protected readonly IWebService service = ServicesContainer.Resolve<IWebService>();
 		protected readonly ISettings settings = ServicesContainer.Resolve<ISettings>();
 
-		public event EventHandler IsBusyChanged = delegate { };
+		public event EventHandler<EventArgs> IsBusyChanged;
 
-		private bool isBusy = false;
+		private bool isBusy;
 
 		public bool IsBusy
 		{
@@ -20,7 +20,7 @@ namespace XamChat.Core.ViewModels
 			set
 			{
 				isBusy = value;
-				IsBusyChanged(this, EventArgs.Empty);
+				IsBusyChanged?.Invoke(this, new EventArgs());
 			}
 		}
 	}

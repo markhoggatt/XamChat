@@ -28,7 +28,7 @@ namespace XamChat.Tests
 		}
 
 		[Fact]
-		public async Task ConLoginWithServices()
+		public async Task CanLoginWithServices()
 		{
 			const string sampleUserId = "Test1";
 			const string samplePassword = "pass";

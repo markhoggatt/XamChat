@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UIKit;
 using XamChat.Core.Services;
 using XamChat.Core.ViewModels;
@@ -21,14 +22,17 @@ namespace XamChat.iOS
 			TableView.Source = convSrceDel;
 		}
 
-		public async override void ViewDidAppear(bool animated)
+		public override void ViewDidAppear(bool animated)
 		{
 			base.ViewDidAppear(animated);
 
 			try
 			{
-				await messageViewModel.GetConversations();
-				TableView.ReloadData();
+				Task.Run(async () =>
+				{
+					await messageViewModel.GetConversations();
+					InvokeOnMainThread(() => TableView.ReloadData());
+				});
 			}
 			catch (Exception ex)
 			{
