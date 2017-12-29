@@ -11,19 +11,11 @@ using UIKit;
 
 namespace XamChat.iOS
 {
-    [Register ("ConversationsController")]
-    partial class ConversationsController
+    [Register ("MessagesController")]
+    partial class MessagesController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem addFriend { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (addFriend != null) {
-                addFriend.Dispose ();
-                addFriend = null;
-            }
         }
     }
 }
