@@ -31,7 +31,11 @@ namespace XamChat.iOS
 				Task.Run(async () =>
 				{
 					await messageViewModel.GetConversations();
-					InvokeOnMainThread(() => TableView.ReloadData());
+					InvokeOnMainThread(() =>
+					{
+						Title = "Conversations";
+						TableView.ReloadData();
+					});
 				});
 			}
 			catch (Exception ex)

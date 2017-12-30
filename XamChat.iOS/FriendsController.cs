@@ -8,6 +8,8 @@ namespace XamChat.iOS
 {
 	public partial class FriendsController : UITableViewController
 	{
+		const string ConversationSegue = "OnConversation";
+
 		readonly FriendViewModel friendViewModel = ServicesContainer.Resolve<FriendViewModel>();
 
 		public FriendsController(IntPtr handle) : base(handle)
@@ -19,6 +21,11 @@ namespace XamChat.iOS
 			base.ViewDidLoad();
 
 			var friendsTblSrce = new FriendsTableSource();
+			friendsTblSrce.DidSelectFriend += (sender, e) =>
+			{
+				PerformSegue(ConversationSegue, this);
+			};
+
 			TableView.Source = friendsTblSrce;
 		}
 

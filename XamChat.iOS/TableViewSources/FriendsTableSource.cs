@@ -14,6 +14,8 @@ namespace XamChat.iOS
 
 		readonly FriendViewModel friendViewModel = ServicesContainer.Resolve<FriendViewModel>();
 
+		public EventHandler<EventArgs> DidSelectFriend;
+
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
 			User friend = friendViewModel.Friends[indexPath.Row];
@@ -33,6 +35,11 @@ namespace XamChat.iOS
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
 			return friendViewModel.Friends == null ? 0 : friendViewModel.Friends.Length;
+		}
+
+		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		{
+			DidSelectFriend?.Invoke(this, EventArgs.Empty);
 		}
 	}
 }
